@@ -1,20 +1,40 @@
-<h1>Simple RBNB</h1>
+<h3 class="text-center" >Simple R&BNB
+  <small class="text-muted">A new way to find amazing places</small>
+</h3>
+<br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Add a new flat</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
 <div class="container">
-  <div class="card-group">
-    <% @flats.each do |flat| %>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-header text-center"><%= link_to flat.name, flat_path(flat) %></h5>
-        <p class="card-text text-center"><%= flat.address %></p>
-        <p class="card-text text-center"><%= flat.description %></p>
-        <div class="card-footer d-flex">
-          <p class="card-text">👯‍♀️<%= flat.number_of_guests %></p>
-          <p class="card-text">💲<%= flat.price_per_night %></p>
-          <a href="#" class="btn btn-primary">See flat</a>
+  <h4>All flats (<%= @flats.length %>)</h4>
+    <div class="card-group">
+      <% @flats.each do |flat| %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-text text-center"><%= link_to flat.name, flat_path(flat) %></h5>
+          <p class="card-text text-center"><%= flat.address %></p>
+          <p class="card-text text-center"><%= flat.description %></p>
+          <div class="card-footer d-flex justify-content-between align-items-end ">
+            <p class="card-text">👯‍♀️<%= flat.number_of_guests %></p>
+            <p class="card-text">💲<%= flat.price_per_night %></p>
+          </div>
         </div>
       </div>
+      <% end  %>
     </div>
-    <% end  %>
-  </div>
 </div>
