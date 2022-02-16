@@ -1,0 +1,20 @@
+<h1>Simple RBNB</h1>
+<div class="container">
+  <div class="card-group">
+    <% @flats.each do |flat| %>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-header text-center"><%= link_to flat.name, flat_path(flat) %></h5>
+        <p class="card-text text-center"><%= flat.address %></p>
+        <p class="card-text text-center"><%= flat.description %></p>
+        <div class="card-footer d-flex">
+          <p class="card-text">👯‍♀️<%= flat.number_of_guests %></p>
+          <p class="card-text">💲<%= flat.price_per_night %></p>
+          <a href="#" class="btn btn-primary">See flat</a>
+        </div>
+      </div>
+    </div>
+    <% end  %>
+  </div>
+</div>
